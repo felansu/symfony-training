@@ -4,15 +4,24 @@ namespace AppBundle\Controller;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class GenusController
+class GenusController extends controller
 {
     /**
-     * @Route("/primeraPagina")
+     * @Route("/primeraPagina/{nombre}")
      */
-    public function muestraPagina()
+    public function muestraPagina($nombre)
     {
-        return new Response('Primera página en PHP 7.1');
+        $posiciones = [
+            'Primero',
+            'Segundo',
+            'Tercero'
+        ];
+
+        return $this->render('genus/show.html.twig', [
+            'nombre' => $nombre,
+            'posiciones' => $posiciones
+        ]);
     }
 }
