@@ -1,15 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: felansu
- * Date: 07/11/2017
- * Time: 21:05
- */
 
 namespace AppBundle\Controller;
 
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Response;
+
 class GenusController
 {
-
+    /**
+     * @Route("/primeraPagina")
+     */
+    public function muestraPagina()
+    {
+        return new Response('Primera página en PHP 7.1');
+    }
 }
