@@ -1,5 +1,11 @@
-<h1>Hola, que tal {{ nombre }}</h1>
+{% extends 'base.html.twig' %}
 
-{% for posicion in posiciones %}
-    <li>{{ posicion }}</li>
-{% endfor %}
+{% block title %} Symfony is awesome ! {% endblock %}
+
+{% block body %}
+    <h1>Hola, que tal {{ nombre }}</h1>
+
+    {% for posicion in posiciones %}
+        <li>{{ posicion }}</li>
+    {% endfor %}
+{% endblock %}
